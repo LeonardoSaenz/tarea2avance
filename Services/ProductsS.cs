@@ -8,7 +8,7 @@ namespace Tarea1DWBE.Services
 {
     public class ProductsS
     {
-        NorthwindContext dataContext = new NorthwindContext();
+        private NorthwindContext dataContext = new NorthwindContext();
         public IQueryable<Products> GetAllProducts()
         {
             return dataContext.Products.Select(s => s);

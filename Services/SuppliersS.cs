@@ -8,7 +8,7 @@ namespace Tarea1DWBE.Services
 {
     public class SuppliersS
     {
-        NorthwindContext dataContext = new NorthwindContext();
+        private NorthwindContext dataContext = new NorthwindContext();
         public IQueryable<Suppliers> GetAllSuppliers()
         {
             return dataContext.Suppliers.Select(s => s);

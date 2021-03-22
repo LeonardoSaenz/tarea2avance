@@ -8,7 +8,7 @@ namespace Tarea1DWBE.Services
 {
     public class CategoriesS
     {
-        NorthwindContext dataContext = new NorthwindContext();
+        private NorthwindContext dataContext = new NorthwindContext();
         public IQueryable<Categories> GetAllCategories()
         {
             return dataContext.Categories.Select(s => s);
