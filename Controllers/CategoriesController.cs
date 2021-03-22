@@ -16,12 +16,12 @@ namespace Tarea1DWBE.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
+        private static readonly CategoriesS request = new CategoriesS();
+  
         // GET: api/Categories
         [HttpGet]
         public IEnumerable<Categories> GetCategories()
         {
-            var request = new CategoriesS();
-
             return request.GetAllCategories();
         }
 

@@ -13,6 +13,7 @@ namespace Tarea1DWBE.Services
         {
             return dataContext.Categories.Select(s => s);
         }
+
     }
 
 

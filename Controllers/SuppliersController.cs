@@ -13,13 +13,13 @@ namespace Tarea1DWBE.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class SuppliersController : ControllerBase
-    {   
+    {
+        private static readonly SuppliersS request = new SuppliersS();
+
         // GET: api/Suppliers
         [HttpGet]
         public IEnumerable<Suppliers> GetSuppliers()
         {
-            var request = new SuppliersS();
-
             return request.GetAllSuppliers();
         }
         

@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\NorthwindController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="DataAccess\" />
   </ItemGroup>
 

@@ -14,12 +14,12 @@ namespace Tarea1DWBE.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
+        private static readonly ProductsS request = new ProductsS();
+
         // GET: api/Products
         [HttpGet]
         public IEnumerable<Products> GetProducts()
         {
-            var request = new ProductsS();
-
             return request.GetAllProducts();
         }
 
