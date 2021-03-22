@@ -10,32 +10,19 @@ using Tarea1DWBE.Services;
 
 namespace Tarea1DWBE.Controllers
 {
-
-    public class CategoriesServices : CategoriesS
-    {
-        public static CategoriesS CategoriesService = new CategoriesS();
-
-        public static void Tarea2()
-        {
-            var output = CategoriesService.GetAllCategories().ToList();
-        }
-    }
         
 
     [Route("api/[controller]")] 
     [ApiController]
     public class CategoriesController : ControllerBase
-    {       
+    {
         // GET: api/Categories
         [HttpGet]
         public IEnumerable<Categories> GetCategories()
         {
-            using (var dataContext = new NorthwindContext())
-            {
-                var categoriesQuery = dataContext.Categories.Select(s => s);
-                var output = categoriesQuery.ToList();
-                return output;
-            }
+            var request = new CategoriesS();
+
+            return request.GetAllCategories();
         }
 
         // GET: api/Categories/5

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Tarea1DWBE.DataAccess;
+using Tarea1DWBE.Services;
 
 namespace Tarea1DWBE.Controllers
 {
@@ -17,12 +18,9 @@ namespace Tarea1DWBE.Controllers
         [HttpGet]
         public IEnumerable<Products> GetProducts()
         {
-            using(var dataContext = new NorthwindContext())
-            {
-                var categoriesQuery = dataContext.Products.Select(s => s);
-                var output = categoriesQuery.ToList();
-                return output;
-            }
+            var request = new ProductsS();
+
+            return request.GetAllProducts();
         }
 
         // GET: api/Products/5
